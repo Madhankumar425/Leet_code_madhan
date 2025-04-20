@@ -1,11 +1,18 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int len = numbers.length;
-        for(int i=0;i<len;i++){
-            for(int j=i+1;j<len;j++){
-                if(numbers[i]+numbers[j]==target){
-                   return new int[]{i+1,j+1};
-                }
+       int l = 0;
+        int e = len-1;
+        while(l<e){
+            int sum = numbers[l] + numbers[e];
+            if(sum==target){
+                return new int[]{l+1,e+1};
+            }
+            else if(sum<target){
+                l++;
+            }
+            else{
+                e--;
             }
         }
      return new int[]{-1,-1};

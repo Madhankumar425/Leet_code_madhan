@@ -1,7 +1,7 @@
 class Solution {
     public int thirdMax(int[] nums) {
         int len = nums.length;
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> set = new TreeSet<>();
         for(int i : nums){
             set.add(i);
         }
@@ -11,7 +11,7 @@ class Solution {
             arr[index] = j;
             index++;
         }
-        Arrays.sort(arr);
+       // Arrays.sort(arr);
         int n = arr.length;
         if(n<3){
             return arr[n-1];

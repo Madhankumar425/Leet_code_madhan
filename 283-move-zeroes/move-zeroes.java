@@ -1,24 +1,15 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-       int len = nums.length;
-       int index = 0;
-       int count = 0;
-       for(int i=0;i<len;i++)
-       {
-       if(nums[i]>0 || nums[i]<0){
-        nums[index] = nums[i];
-        index++;
-       }
-       else if(nums[i]==0){
-        count++;
-       }
-       }
-       //
-       for(int j=len-count;j<len;j++){
-        nums[j] = 0;
-       }
-       for(int i : nums){
-        System.out.print(i);
-       }
+        int position = 0;
+
+        for (var num : nums) {
+            if (num != 0) {
+                nums[position++] = num;
+            }
+        }
+
+        while (position < nums.length) {
+            nums[position++] = 0;
+        }
     }
 }

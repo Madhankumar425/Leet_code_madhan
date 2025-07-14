@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 class Solution {
     public boolean findRotation(int[][] matrix, int[][] target) {
-        for (int r = 0; r < 4; r++) {
+        for (int r = 0; r < 10; r++) {
             if (Arrays.deepEquals(matrix, target)) {
                 return true;
             }
